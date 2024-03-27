@@ -24,3 +24,12 @@
     - body (text) {required}
     - user_id {required} filled by laravel
     - ticket_id {required} filled by laravel
+
+#### Commands
+To create migration, resource controller, and form request at the same time type the command:
+- php artisan make:model Ticket -m -r -R
+- php artisan migrate
+
+To see the list of route of this application:
+- php artisan route:list
+
