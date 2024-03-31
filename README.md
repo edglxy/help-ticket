@@ -33,3 +33,6 @@ To create migration, resource controller, and form request at the same time type
 To see the list of route of this application:
 - php artisan route:list
 
+To create a new component from view:
+- php artisan make:component Textarea
+- php artisan make:component file-input

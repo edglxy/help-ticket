@@ -19,6 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('auth')->group(function () {
+    // Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
+    // Route::post('/ticket/create', [TicketController::class, 'store'])->name('ticket.store');
+    // OR
+    Route::resource('/ticket', TicketController::class);
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,12 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('auth')->prefix('ticket')->group(function () {
-    // Route::get('/ticket/create', [TicketController::class, 'create'])->name('ticket.create');
-    // Route::post('/ticket/create', [TicketController::class, 'store'])->name('ticket.store');
-    // OR
-    Route::resource('/', TicketController::class);
-});
 
 
 require __DIR__.'/auth.php';
