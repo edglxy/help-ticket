@@ -36,3 +36,8 @@ To see the list of route of this application:
 To create a new component from view:
 - php artisan make:component Textarea
 - php artisan make:component file-input
+
+To link storage folder to the public folder:
+- php artisan storage:link --relative
+Install dependency to use the storage:link command inside docker container
+- composer require symfony/filesystem
