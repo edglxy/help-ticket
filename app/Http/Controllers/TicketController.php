@@ -15,9 +15,11 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
+        $tickets = Ticket::all();
+        // return view('ticket.index')->with('tickets', $tickets);
+        // return view('ticket.index', ['tickets' => $tickets]);
+        return view('ticket.index', compact('tickets'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -54,7 +56,8 @@ class TicketController extends Controller
      */
     public function show(Ticket $ticket)
     {
-        //
+        // dd($ticket);
+        return  view('ticket.show', compact('ticket'));
     }
 
     /**
