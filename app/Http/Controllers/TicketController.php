@@ -57,7 +57,7 @@ class TicketController extends Controller
     public function show(Ticket $ticket)
     {
         // dd($ticket);
-        return  view('ticket.show', compact('ticket'));
+        return view('ticket.show', compact('ticket'));
     }
 
     /**
@@ -65,7 +65,7 @@ class TicketController extends Controller
      */
     public function edit(Ticket $ticket)
     {
-        //
+        // return view('ticket.edit');
     }
 
     /**
@@ -81,6 +81,8 @@ class TicketController extends Controller
      */
     public function destroy(Ticket $ticket)
     {
-        //
+        $ticket->delete();
+        return redirect(route('ticket.index'));
+        // dd($ticket);
     }
 }
