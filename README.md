@@ -65,7 +65,7 @@ To rollback the changes:
 
 -   php artisan migrate:rollback
 
-To make/remove a configuration cache file:
+To make/remove a configuration cache file this will also fix not sending emails:
 
 -   php artisan config:cache
 -   php artisan config:clear
